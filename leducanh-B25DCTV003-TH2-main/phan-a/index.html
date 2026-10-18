@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thư Viện Lớp Học - JS Thuần</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>📚 Thư Viện Lớp Học</h1>
+    <div class="header-right">
+      <span>Yêu thích: <strong id="fav-count">0</strong> cuốn</span>
+      <button id="theme-toggle" class="btn-theme">🌙 Tối/Sáng</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Thanh công cụ -->
+    <section class="toolbar">
+      <input type="text" id="search-input" placeholder="🔍 Tìm theo tên sách...">
+      <select id="genre-select">
+        <option value="">Tất cả thể loại</option>
+      </select>
+    </section>
+
+    <!-- Trạng thái -->
+    <p id="status-bar" class="status-bar">Đang tải...</p>
+
+    <!-- Lưới danh sách sách -->
+    <section id="book-grid" class="book-grid"></section>
+
+    <!-- Form thêm sách -->
+    <section class="form-section">
+      <h2>➕ Thêm sách mới</h2>
+      <form id="add-book-form" novalidate>
+        <div class="form-group">
+          <label for="title">Tên sách (*):</label>
+          <input type="text" id="title" name="title" placeholder="Nhập tên sách (ít nhất 3 ký tự)">
+          <small class="error-msg" id="error-title"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="author">Tác giả (*):</label>
+          <input type="text" id="author" name="author" placeholder="Nhập tên tác giả">
+          <small class="error-msg" id="error-author"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="genre">Thể loại (*):</label>
+          <select id="genre" name="genre">
+            <option value="">-- Chọn thể loại --</option>
+            <option value="Công nghệ">Công nghệ</option>
+            <option value="Văn học">Văn học</option>
+            <option value="Kỹ năng">Kỹ năng</option>
+            <option value="Lịch sử">Lịch sử</option>
+          </select>
+          <small class="error-msg" id="error-genre"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="year">Năm xuất bản (*):</label>
+          <input type="number" id="year" name="year" placeholder="1900 - Hiện tại">
+          <small class="error-msg" id="error-year"></small>
+        </div>
+
+        <button type="submit" class="btn-submit">Thêm Sách</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Bài Thực Hành 02 - Lập Trình Web</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
